@@ -12,7 +12,7 @@ $ go get github.com/marlonmp/argon2
 
 ### Generate Hash
 
-If you want to generate hash with default options, only set a password, GenerateHash function create a randoms salt.
+If you want to generate a hash, just hash the password, GenerateHash function create a random salt and have a default argon2 parameters.
 
 ```golang
 password := "some password"
@@ -25,7 +25,7 @@ If you want to generate your own salt, no biggie, you can pass it in GenerateHas
 ```golang
 salt := "some salt"
 
-password := "&Bad_Pa$Sword_123&"
+password := "some password"
 
 hash, err := argon2.GenerateHashNSalt(password, salt)
 
